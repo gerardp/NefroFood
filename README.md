@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Puc-O-No Food List App
 
-## Getting Started
+A web application built with Next.js, React, Tailwind CSS, and Sequelize for listing foods with mineral content indicators.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Searchable list of foods
+- Traffic light indicators for potassium (K), sodium (Na), and phosphorus (P) levels
+- SQLite database for local development, MySQL for production
+- Deployable on Vercel
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Run database migrations to create tables and seed data:
+   ```bash
+   npx sequelize-cli db:migrate
+   ```
 
-## Learn More
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Database
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The app uses Sequelize ORM with SQLite for development and MySQL for production.
 
-## Deploy on Vercel
+- Local: SQLite database file `database.sqlite`
+- Production: Configure environment variables for MySQL
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Traffic Light Images
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add the following images to the `public` folder:
+- `green.png` - Green light for low levels
+- `yellow.png` - Yellow light for medium levels
+- `red.png` - Red light for high levels
+
+## Thresholds
+
+- **Potassium (K)**: 0–150 (green), 151–299 (yellow), ≥300 (red)
+- **Sodium (Na)**: 0–599 (green), ≥600 (red)
+- **Phosphorus (P)**: 0–90 (green), 91–299 (yellow), ≥300 (red)
+
+## Deployment
+
+Deploy to Vercel by connecting your GitHub repository. Ensure to set up MySQL database for production and configure environment variables.
+
+## Technologies
+
+- Next.js 16
+- React
+- TypeScript
+- Tailwind CSS
+- Sequelize ORM
+- SQLite / MySQL
