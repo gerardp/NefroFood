@@ -1,4 +1,4 @@
-# NefroFood Food List App
+# NefroFood - Food List App
 
 A web application built with Next.js, React, Tailwind CSS, and Sequelize for listing foods with mineral content indicators.
 
@@ -7,7 +7,6 @@ A web application built with Next.js, React, Tailwind CSS, and Sequelize for lis
 - Searchable list of foods
 - Traffic light indicators for potassium (K), sodium (Na), and phosphorus (P) levels
 - SQLite database for local development, MySQL for production
-- Deployable on Vercel
 
 ## Setup
 
