@@ -1,4 +1,4 @@
-# Puc-O-No Food List App
+# NefroFood Food List App
 
 A web application built with Next.js, React, Tailwind CSS, and Sequelize for listing foods with mineral content indicators.
 
@@ -34,13 +34,6 @@ The app uses Sequelize ORM with SQLite for development and MySQL for production.
 
 - Local: SQLite database file `database.sqlite`
 - Production: Configure environment variables for MySQL
-
-## Traffic Light Images
-
-Add the following images to the `public` folder:
-- `green.png` - Green light for low levels
-- `yellow.png` - Yellow light for medium levels
-- `red.png` - Red light for high levels
 
 ## Thresholds
 
