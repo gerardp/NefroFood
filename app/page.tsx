@@ -47,13 +47,24 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100 p-4">
       <h1 className="text-2xl font-bold mb-4">Lista de Alimentos</h1>
-      <input
-        type="text"
-        placeholder="Buscar alimentos..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="w-full p-2 mb-4 border border-gray-300 rounded"
-      />
+      <div className="relative mb-4">
+        <input
+          type="text"
+          placeholder="Buscar alimentos..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full p-2 pr-10 border border-gray-300 rounded"
+        />
+        {searchTerm && (
+          <button
+            onClick={() => setSearchTerm('')}
+            className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-xl font-bold w-6 h-6 flex items-center justify-center"
+            aria-label="Borrar búsqueda"
+          >
+            ×
+          </button>
+        )}
+      </div>
       <div className="space-y-4">
         {displayedFoods.map((food) => (
           <div key={food.id} className="bg-white p-4 rounded shadow">
